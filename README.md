@@ -28,6 +28,7 @@ This project implements a secure JSON Web Key Set (JWKS) server using SQLite to 
 Make sure python is downloaded; you will need pip (Python's package manager) to install required dependencies.
 
   Installation & Setup
+  
 1. Clone the repo
    
 2. Create a Virtual Environment
@@ -35,9 +36,11 @@ Make sure python is downloaded; you will need pip (Python's package manager) to 
 python -m venv venv
 venv\Scripts\activate
 
+
 3. Install Dependencies
 
 pip install -r requirements.txt
+
 
 4. Run the Server
 
@@ -45,19 +48,22 @@ pip install -r requirements.txt
 
 python app.py
 
+
 5. Testing Endpoints
 
-    Get JWKS (Returns public keys in JSON Web Key Set format)
+Get JWKS (Returns public keys in JSON Web Key Set format)
 
-curl http://localhost:8080/.well-known/jwks.json
+  curl http://localhost:8080/.well-known/jwks.json
 
-    Post Auth (Issues a JWT using a valid private key)
+Post Auth (Issues a JWT using a valid private key)
 
-curl -X POST http://localhost:8080/auth
+  curl -X POST http://localhost:8080/auth
 
-    Post Auth with Expired Key (Issues a JWT using an expired private key)
+Post Auth with Expired Key (Issues a JWT using an expired private key)
 
-curl -X POST "http://localhost:8080/auth?expired=true"
+  curl -X POST "http://localhost:8080/auth?expired=true"
+
+  
 
 6. Run Tests
 
